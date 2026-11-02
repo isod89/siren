@@ -1,0 +1,692 @@
+{
+ "ARP|clipper/ACID/ACID ARP": {
+  "trim": -5.1,
+  "tone": 0,
+  "db": -20.2,
+  "hf": 0.7
+ },
+ "ARP|clipper/ACID/SQR SQUELCH": {
+  "trim": -3.1,
+  "tone": 0,
+  "db": -22.2,
+  "hf": 0.6
+ },
+ "ARP|clipper/ACID/SQUELCH": {
+  "trim": -3,
+  "tone": 0,
+  "db": -22.3,
+  "hf": 0.7
+ },
+ "ARP|clipper/ANALOG/SQR PLUCK": {
+  "trim": -0.9,
+  "tone": 0,
+  "db": -24.5,
+  "hf": 1.3
+ },
+ "ARP|clipper/DIGITAL/CLAV": {
+  "trim": -0.6,
+  "tone": 2200,
+  "db": -22.4,
+  "hf": 11.9
+ },
+ "ARP|clipper/DIGITAL/FM PLUCK": {
+  "trim": -2.8,
+  "tone": 0,
+  "db": -22.5,
+  "hf": 2.9
+ },
+ "ARP|clipper/DIGITAL/RHODES": {
+  "trim": -4.8,
+  "tone": 7000,
+  "db": -20.3,
+  "hf": 3.7
+ },
+ "ARP|clipper/FMX/FMX PLUCK": {
+  "trim": -1.2,
+  "tone": 0,
+  "db": -24.1,
+  "hf": 2.1
+ },
+ "ARP|clipper/HYBRID/PLUCK": {
+  "trim": -2.1,
+  "tone": 7000,
+  "db": -23.1,
+  "hf": 3.2
+ },
+ "ARP|clipper/HYBRID/SAW PLUCK": {
+  "trim": -2.7,
+  "tone": 4500,
+  "db": -22.4,
+  "hf": 3.8
+ },
+ "ARP|clipper/JUNO/ARP PLUCK": {
+  "trim": 6.3,
+  "tone": 0,
+  "db": -31.6,
+  "hf": 2.4
+ },
+ "ARP|clipper/PHASE/CZ PLUCK": {
+  "trim": -2.3,
+  "tone": 0,
+  "db": -23,
+  "hf": 1.3
+ },
+ "ARP|clipper/WSEQ/DUB STEPS": {
+  "trim": -7.2,
+  "tone": 0,
+  "db": -18.1,
+  "hf": 1.6
+ },
+ "ARP|clipper/WSEQ/MINOR SEQ": {
+  "trim": -5.4,
+  "tone": 0,
+  "db": -19.9,
+  "hf": 2.8
+ },
+ "ARP|clipper/WSEQ/NOISY SEQ": {
+  "trim": -5.6,
+  "tone": 0,
+  "db": -19.7,
+  "hf": 2.6
+ },
+ "ARP|clipper/WSEQ/TRANCE GATE": {
+  "trim": -4.2,
+  "tone": 0,
+  "db": -21.1,
+  "hf": 2.6
+ },
+ "BASS|clipper/ACID/ACID HOUSE": {
+  "trim": 0.7,
+  "tone": 0,
+  "db": -17.6,
+  "hf": 0.1
+ },
+ "BASS|clipper/ACID/ACID LINE": {
+  "trim": 0.8,
+  "tone": 0,
+  "db": -17.7,
+  "hf": 0.1
+ },
+ "BASS|clipper/ACID/BUBBLE": {
+  "trim": 0.8,
+  "tone": 0,
+  "db": -17.8,
+  "hf": 0.2
+ },
+ "BASS|clipper/ACID/DIST ACID": {
+  "trim": 0.4,
+  "tone": 0,
+  "db": -17.3,
+  "hf": 0.2
+ },
+ "BASS|clipper/ACID/FUZZ ACID": {
+  "trim": 0.4,
+  "tone": 0,
+  "db": -17.3,
+  "hf": 0.2
+ },
+ "BASS|clipper/ACID/LOW 303": {
+  "trim": -0.5,
+  "tone": 0,
+  "db": -16.4,
+  "hf": 0
+ },
+ "BASS|clipper/ACID/RUBBER": {
+  "trim": 1.4,
+  "tone": 0,
+  "db": -18.3,
+  "hf": 0.1
+ },
+ "BASS|clipper/ACID/SLIDE BASS": {
+  "trim": 0.9,
+  "tone": 0,
+  "db": -17.8,
+  "hf": 0.1
+ },
+ "BASS|clipper/ACID/SOFT 303": {
+  "trim": 1.2,
+  "tone": 0,
+  "db": -18.1,
+  "hf": 0.1
+ },
+ "BASS|clipper/ACID/SQR ACID": {
+  "trim": -0.1,
+  "tone": 0,
+  "db": -16.8,
+  "hf": 0.1
+ },
+ "BASS|clipper/ANALOG/ACID 303": {
+  "trim": 3.1,
+  "tone": 0,
+  "db": -20,
+  "hf": 0.1
+ },
+ "BASS|clipper/ANALOG/DYN BASS": {
+  "trim": 0.9,
+  "tone": 0,
+  "db": -17.8,
+  "hf": 0.1
+ },
+ "BASS|clipper/ANALOG/FUNK BASS": {
+  "trim": -0.5,
+  "tone": 0,
+  "db": -16.4,
+  "hf": 0.1
+ },
+ "BASS|clipper/ANALOG/MINI BASS": {
+  "trim": 0.9,
+  "tone": 0,
+  "db": -17.8,
+  "hf": 0.2
+ },
+ "BASS|clipper/ANALOG/MONO BASS": {
+  "trim": 0.8,
+  "tone": 0,
+  "db": -17.7,
+  "hf": 0.2
+ },
+ "BASS|clipper/ANALOG/REESE": {
+  "trim": -1.2,
+  "tone": 0,
+  "db": -15.8,
+  "hf": 0.1
+ },
+ "BASS|clipper/ANALOG/SAW BASS": {
+  "trim": 0.7,
+  "tone": 0,
+  "db": -17.6,
+  "hf": 0.1
+ },
+ "BASS|clipper/ANALOG/SUB BASS": {
+  "trim": -1.1,
+  "tone": 0,
+  "db": -15.8,
+  "hf": 0
+ },
+ "BASS|clipper/DIGITAL/DX BASS": {
+  "trim": -0.6,
+  "tone": 0,
+  "db": -16.3,
+  "hf": 0.2
+ },
+ "BASS|clipper/DIGITAL/FM BASS": {
+  "trim": -1.4,
+  "tone": 0,
+  "db": -15.5,
+  "hf": 0.1
+ },
+ "BASS|clipper/FMX/SAW FM BASS": {
+  "trim": -0.8,
+  "tone": 0,
+  "db": -16.1,
+  "hf": 0.1
+ },
+ "BASS|clipper/HYBRID/808 SUB": {
+  "trim": -2.8,
+  "tone": 0,
+  "db": -14.1,
+  "hf": 0.2
+ },
+ "BASS|clipper/HYBRID/ACID HARD": {
+  "trim": -0.2,
+  "tone": 0,
+  "db": -16.7,
+  "hf": 0.2
+ },
+ "BASS|clipper/HYBRID/ACID": {
+  "trim": 1.8,
+  "tone": 0,
+  "db": -18.7,
+  "hf": 0.2
+ },
+ "BASS|clipper/HYBRID/FOLD BASS": {
+  "trim": -0.6,
+  "tone": 0,
+  "db": -16.3,
+  "hf": 0.6
+ },
+ "BASS|clipper/HYBRID/MOOG BASS": {
+  "trim": 0,
+  "tone": 0,
+  "db": -16.9,
+  "hf": 0.3
+ },
+ "BASS|clipper/HYBRID/REESE": {
+  "trim": -1.1,
+  "tone": 0,
+  "db": -15.8,
+  "hf": 0.1
+ },
+ "BASS|clipper/JUNO/JUNO BASS": {
+  "trim": -0.9,
+  "tone": 0,
+  "db": -16,
+  "hf": 0.1
+ },
+ "BASS|clipper/JUNO/SUB BASS 106": {
+  "trim": -2.2,
+  "tone": 0,
+  "db": -14.7,
+  "hf": 0
+ },
+ "BASS|clipper/PHASE/CZ BASS": {
+  "trim": 1,
+  "tone": 0,
+  "db": -17.9,
+  "hf": 0.5
+ },
+ "BASS|clipper/PHASE/CZ SYNBASS": {
+  "trim": -1,
+  "tone": 0,
+  "db": -15.9,
+  "hf": 0
+ },
+ "BASS|clipper/TRIO/FAT BASS": {
+  "trim": 1.3,
+  "tone": 0,
+  "db": -18.2,
+  "hf": 0.5
+ },
+ "BASS|clipper/WHEEL/HOUSE ORGN": {
+  "trim": 4.8,
+  "tone": 0,
+  "db": -21.7,
+  "hf": 0.1
+ },
+ "BASS|clipper/WSEQ/OCTAVE BASS": {
+  "trim": -0.3,
+  "tone": 0,
+  "db": -16.7,
+  "hf": 0.2
+ },
+ "FX|clipper/NOISE/BITCRUSH": {
+  "trim": -1.9,
+  "tone": 0,
+  "db": -23.5,
+  "hf": 4.8
+ },
+ "FX|clipper/NOISE/OCEAN": {
+  "trim": -1.9,
+  "tone": 0,
+  "db": -23.5,
+  "hf": 0.1
+ },
+ "FX|clipper/NOISE/RADIO": {
+  "trim": -2.9,
+  "tone": 0,
+  "db": -22.5,
+  "hf": 5.5
+ },
+ "FX|clipper/NOISE/RISER": {
+  "trim": 3.3,
+  "tone": 0,
+  "db": -28.7,
+  "hf": 2.5
+ },
+ "FX|clipper/NOISE/STATIC": {
+  "trim": 8,
+  "tone": 2800,
+  "db": -31.7,
+  "hf": 10.7
+ },
+ "FX|clipper/NOISE/TONAL NZ": {
+  "trim": 0,
+  "tone": 2200,
+  "db": -24.2,
+  "hf": 9.7
+ },
+ "FX|clipper/NOISE/WHOOSH": {
+  "trim": 1.7,
+  "tone": 2200,
+  "db": -25.5,
+  "hf": 8.9
+ },
+ "FX|clipper/NOISE/WIND": {
+  "trim": 3.3,
+  "tone": 0,
+  "db": -28.7,
+  "hf": 5.5
+ },
+ "HOOK|clipper/ACID/ACID LEAD": {
+  "trim": -2.4,
+  "tone": 0,
+  "db": -17.2,
+  "hf": 0.7
+ },
+ "HOOK|clipper/ACID/DIST ACID": {
+  "trim": 0.9,
+  "tone": 0,
+  "db": -20.5,
+  "hf": 0.8
+ },
+ "HOOK|clipper/ACID/FUZZ ACID": {
+  "trim": -0.1,
+  "tone": 0,
+  "db": -19.6,
+  "hf": 0.9
+ },
+ "HOOK|clipper/ACID/SQR LEAD": {
+  "trim": -1.4,
+  "tone": 0,
+  "db": -18.3,
+  "hf": 0.8
+ },
+ "HOOK|clipper/ANALOG/FAT LEAD": {
+  "trim": -0.8,
+  "tone": 0,
+  "db": -18.8,
+  "hf": 2.2
+ },
+ "HOOK|clipper/ANALOG/MINI LEAD": {
+  "trim": 1.3,
+  "tone": 2200,
+  "db": -20.5,
+  "hf": 3.9
+ },
+ "HOOK|clipper/ANALOG/PROPH LEAD": {
+  "trim": -0.5,
+  "tone": 0,
+  "db": -19.2,
+  "hf": 2
+ },
+ "HOOK|clipper/ANALOG/PWM LEAD": {
+  "trim": -1.3,
+  "tone": 0,
+  "db": -18.4,
+  "hf": 0.8
+ },
+ "HOOK|clipper/DIGITAL/FM LEAD": {
+  "trim": 0,
+  "tone": 0,
+  "db": -19.6,
+  "hf": 2.7
+ },
+ "HOOK|clipper/DIGITAL/M1 PIANO": {
+  "trim": 0.9,
+  "tone": 2200,
+  "db": -17.5,
+  "hf": 15.3
+ },
+ "HOOK|clipper/DIGITAL/RHODES": {
+  "trim": -2.2,
+  "tone": 7000,
+  "db": -17.3,
+  "hf": 3.5
+ },
+ "HOOK|clipper/DIGITAL/SUITCASE": {
+  "trim": 0.1,
+  "tone": 5500,
+  "db": -19.3,
+  "hf": 4.7
+ },
+ "HOOK|clipper/FMX/FM SYNC LEAD": {
+  "trim": -0.3,
+  "tone": 0,
+  "db": -19.3,
+  "hf": 2.9
+ },
+ "HOOK|clipper/HYBRID/HOOVER": {
+  "trim": -0.1,
+  "tone": 0,
+  "db": -19.5,
+  "hf": 1.5
+ },
+ "HOOK|clipper/HYBRID/SOFT SYNC": {
+  "trim": 3.4,
+  "tone": 2200,
+  "db": -19.3,
+  "hf": 16.4
+ },
+ "HOOK|clipper/HYBRID/SYNC LEAD": {
+  "trim": 3.2,
+  "tone": 2200,
+  "db": -20,
+  "hf": 13.9
+ },
+ "HOOK|clipper/HYBRID/TRANCE": {
+  "trim": 0.3,
+  "tone": 0,
+  "db": -19.9,
+  "hf": 1.3
+ },
+ "HOOK|clipper/JUNO/SAW LEAD 106": {
+  "trim": 0.7,
+  "tone": 4500,
+  "db": -20.2,
+  "hf": 3.3
+ },
+ "HOOK|clipper/PHASE/CZ EPIANO": {
+  "trim": -2.8,
+  "tone": 0,
+  "db": -16.9,
+  "hf": 1.7
+ },
+ "HOOK|clipper/PHASE/CZ LEAD": {
+  "trim": -0.3,
+  "tone": 0,
+  "db": -19.4,
+  "hf": 1.2
+ },
+ "HOOK|clipper/TRIO/DUB CHORD": {
+  "trim": 2,
+  "tone": 0,
+  "db": -21.7,
+  "hf": 1.4
+ },
+ "HOOK|clipper/TRIO/HOOVER": {
+  "trim": -0.6,
+  "tone": 0,
+  "db": -19.1,
+  "hf": 1
+ },
+ "HOOK|clipper/TRIO/MIN STAB": {
+  "trim": 1.4,
+  "tone": 0,
+  "db": -21,
+  "hf": 2.3
+ },
+ "HOOK|clipper/TRIO/SYNC LEAD": {
+  "trim": -0.1,
+  "tone": 2200,
+  "db": -19.2,
+  "hf": 3.7
+ },
+ "HOOK|clipper/VOICE/AAH LEAD": {
+  "trim": 1.1,
+  "tone": 2200,
+  "db": -20.6,
+  "hf": 3.5
+ },
+ "HOOK|clipper/WHEEL/GOSPEL": {
+  "trim": 3.6,
+  "tone": 0,
+  "db": -23.2,
+  "hf": 1.2
+ },
+ "HOOK|clipper/WHEEL/HOUSE ORGN": {
+  "trim": 3.6,
+  "tone": 0,
+  "db": -23.2,
+  "hf": 2.2
+ },
+ "HOOK|clipper/WHEEL/SOUL ORGAN": {
+  "trim": 5.7,
+  "tone": 0,
+  "db": -25.3,
+  "hf": 0.3
+ },
+ "HOOK|clipper/WSEQ/RHYTHM SEQ": {
+  "trim": -1.8,
+  "tone": 0,
+  "db": -17.8,
+  "hf": 2.2
+ },
+ "PAD|clipper/ANALOG/ATMOS PAD": {
+  "trim": -1.1,
+  "tone": 0,
+  "db": -22.4,
+  "hf": 0.1
+ },
+ "PAD|clipper/ANALOG/DARK STR": {
+  "trim": -1.6,
+  "tone": 0,
+  "db": -21.9,
+  "hf": 0.1
+ },
+ "PAD|clipper/ANALOG/JUNO PAD": {
+  "trim": 0.3,
+  "tone": 0,
+  "db": -23.8,
+  "hf": 0.2
+ },
+ "PAD|clipper/ANALOG/SINE PAD": {
+  "trim": 2.8,
+  "tone": 0,
+  "db": -26.3,
+  "hf": 0.1
+ },
+ "PAD|clipper/ANALOG/WARM PAD": {
+  "trim": -0.4,
+  "tone": 0,
+  "db": -23.1,
+  "hf": 0.1
+ },
+ "PAD|clipper/PHASE/CZ CHOIR": {
+  "trim": -0.4,
+  "tone": 0,
+  "db": -23.1,
+  "hf": 0.3
+ },
+ "PAD|clipper/PHASE/CZ PAD": {
+  "trim": 0.7,
+  "tone": 0,
+  "db": -24.2,
+  "hf": 0.2
+ },
+ "PAD|clipper/PHASE/CZ STRING": {
+  "trim": 1.5,
+  "tone": 0,
+  "db": -25,
+  "hf": 0.2
+ },
+ "PAD|clipper/PHASE/CZ SWEEP": {
+  "trim": -0.9,
+  "tone": 0,
+  "db": -22.6,
+  "hf": 1.7
+ },
+ "PAD|clipper/TRIO/BP PAD": {
+  "trim": 3.8,
+  "tone": 2200,
+  "db": -26.7,
+  "hf": 3.7
+ },
+ "PAD|clipper/TRIO/ENSEMBLE": {
+  "trim": 0,
+  "tone": 0,
+  "db": -23.5,
+  "hf": 0.7
+ },
+ "PAD|clipper/TRIO/SAW PAD": {
+  "trim": 0,
+  "tone": 0,
+  "db": -23.5,
+  "hf": 0.5
+ },
+ "STAB|clipper/ANALOG/SYN BRASS": {
+  "trim": -4.2,
+  "tone": 0,
+  "db": -24.7,
+  "hf": 1
+ },
+ "STAB|clipper/DIGITAL/M1 PIANO": {
+  "trim": -2.2,
+  "tone": 2200,
+  "db": -24.7,
+  "hf": 10.1
+ },
+ "STAB|clipper/DIGITAL/RHODES": {
+  "trim": -4.1,
+  "tone": 9000,
+  "db": -24.7,
+  "hf": 3.1
+ },
+ "STAB|clipper/JUNO/80S HITS": {
+  "trim": 2.2,
+  "tone": 0,
+  "db": -31.1,
+  "hf": 1.5
+ },
+ "STAB|clipper/JUNO/JUNO BRASS": {
+  "trim": -3.5,
+  "tone": 0,
+  "db": -25.4,
+  "hf": 2
+ },
+ "STAB|clipper/JUNO/SYNTH BRASS 2": {
+  "trim": -2.5,
+  "tone": 0,
+  "db": -26.4,
+  "hf": 1.6
+ },
+ "STAB|clipper/TRIO/80S POLY": {
+  "trim": -4.6,
+  "tone": 0,
+  "db": -24.3,
+  "hf": 1.7
+ },
+ "STAB|clipper/TRIO/DUB CHORD": {
+  "trim": -4.8,
+  "tone": 0,
+  "db": -24.1,
+  "hf": 1
+ },
+ "STAB|clipper/TRIO/MAJ STAB": {
+  "trim": -2.8,
+  "tone": 0,
+  "db": -26.1,
+  "hf": 1.8
+ },
+ "STAB|clipper/TRIO/MIN STAB": {
+  "trim": -3,
+  "tone": 0,
+  "db": -25.9,
+  "hf": 1.7
+ },
+ "STAB|clipper/TRIO/MIN7 STAB": {
+  "trim": -2.9,
+  "tone": 0,
+  "db": -26,
+  "hf": 1
+ },
+ "STAB|clipper/TRIO/POWER STAB": {
+  "trim": -5.3,
+  "tone": 0,
+  "db": -23.6,
+  "hf": 2.8
+ },
+ "STAB|clipper/TRIO/RAVE STAB": {
+  "trim": -4.2,
+  "tone": 0,
+  "db": -24.7,
+  "hf": 2.6
+ },
+ "STAB|clipper/TRIO/SUS STAB": {
+  "trim": -2.5,
+  "tone": 0,
+  "db": -26.4,
+  "hf": 2.1
+ },
+ "STAB|clipper/WHEEL/DIRTY B3": {
+  "trim": -1.5,
+  "tone": 0,
+  "db": -27.4,
+  "hf": 0.8
+ },
+ "STAB|clipper/WHEEL/HOUSE ORGN": {
+  "trim": -1.8,
+  "tone": 0,
+  "db": -27.1,
+  "hf": 1.5
+ }
+}

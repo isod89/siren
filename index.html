@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIREN · a rave that writes itself</title>
+<meta name="description" content="SIREN composes an endless rave in your browser, and you play it like a DJ. Help build its sound bank for the FM-1.">
+<meta property="og:title" content="SIREN · a rave that writes itself">
+<meta property="og:description" content="An endless generative rave you play like a DJ. Build SIREN's sound bank and send it in.">
+<link rel="stylesheet" href="css/siren.css">
+<link rel="icon" href="assets/siren-mark.svg">
+</head>
+<body>
+<canvas id="sea"></canvas>
+<header class="top">
+  <img class="logo" src="assets/siren-logo-t.svg" alt="SIREN">
+  <button id="play" class="play" aria-label="Play" title="Play / stop (space bar)"><span>▶</span></button>
+  <div class="now">
+    <b id="label">press ▶ to start the rave</b>
+    <span id="where">SIREN writes the music, you play it</span>
+  </div>
+  <div class="keybox" title="The track's key"><b id="key">—</b><small id="scale">KEY</small></div>
+  <div class="bpm" title="The tempo"><b id="bpm">—</b><small>BPM</small><div id="beats" class="beats"><i></i><i></i><i></i><i></i></div></div>
+  <nav class="tabs"><button data-tab="play" class="on">Play</button><button data-tab="atelier">Sound lab</button><button data-tab="set">The set</button></nav>
+  <button id="show" class="btn ghost" title="Full screen: just the sea and the music (F key)">Show</button>
+  <button id="help" class="round" title="How to play">?</button>
+</header>
+<div class="planbar">
+  <div id="plan" class="plan"></div>
+  <div class="planinfo"><b id="sec">—</b><span id="secinfo"></span><em id="next"></em></div>
+</div>
+<main>
+  <section id="tab-play" class="panel on">
+    <div class="callout"><b>Help build SIREN's sound bank.</b> <span>Choosing which sounds each style uses is the biggest job left before SIREN ships on the FM-1. Make your own bank and send it in.</span><button class="btn big" data-go="atelier">Open the sound lab</button></div>
+    <div class="deck">
+      <div class="card mixer">
+        <h3>The mixer <small>click a layer's name to take it in hand · ‹ › changes its sound</small></h3>
+        <div id="strips" class="strips"></div>
+      </div>
+      <div class="side">
+        <div class="card dj">
+          <h3>The DJ <small>drag up / down · double-click: reset</small></h3>
+          <div id="djknobs" class="djknobs"></div>
+        </div>
+        <div class="card comp">
+          <h3>The composition <small>lights up until it happens</small></h3>
+          <div id="pads" class="pads"></div>
+        </div>
+      </div>
+      <div class="card fxcard">
+        <h3>DJ effects <small id="fxhint">hold it down: the effect lasts as long as you hold</small>
+          <label class="chk inline"><input type="checkbox" id="latch"> one click on / off</label></h3>
+        <div id="fx" class="fxpads"></div>
+      </div>
+      <div class="card stylecard">
+        <h3>Style <small id="stylehint">while playing: it comes in on the next phrase · click again: now</small></h3>
+        <div id="styles" class="chips"></div>
+        <div class="row seedrow">
+          <label class="chk"><input type="checkbox" id="stylelock"> stay in this style</label>
+          <span class="sp"></span>
+          <small class="note">Seed</small><input id="seed" class="seed" spellcheck="false" title="The same seed plays the same rave again">
+          <button id="newseed" class="btn" title="A new rave">New</button><button id="copyseed" class="btn ghost" title="Copy the style and the seed">Copy</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="tab-atelier" class="panel">
+    <div class="labgrid">
+      <div class="card">
+        <h3>The sound lab</h3>
+        <p class="note">SIREN picks every track's sounds from its <b>sound bank</b>: for each style, a short list of sounds per layer (bass, arp, hook, pad, stabs, FX). Picking that bank is the biggest job left before SIREN ships on the FM-1, and your ears can help.</p>
+        <ol class="steps">
+          <li><b>Pick a style</b> below.</li>
+          <li><b>Listen</b> to each sound (▶), <b>remove</b> what doesn't fit (×), <b>add</b> what's missing (+ add a sound).</li>
+          <li><b>Try it:</b> go to <a href="#" data-go="play">Play</a> and press ▶. SIREN now picks from your bank (‹ › on a layer goes through its sounds).</li>
+          <li><b>Send it</b> to me with the form on the right. Your bank is saved in this browser, so you can come back to it.</li>
+        </ol>
+        <div class="row"><div id="a-styles" class="chips"></div></div>
+        <div class="row"><span id="count" class="note"></span><span class="sp"></span><label class="chk"><input type="checkbox" id="community"> include community sound packs</label><button id="resetcur" class="btn ghost" title="Back to SIREN's own bank (your changes are lost)">Back to SIREN's bank</button></div>
+        <p class="note small">SIREN balances the sounds of its own bank automatically. A sound you add plays at its raw level for now: judge the sound, not how loud it is.</p>
+        <div id="atelier"></div>
+      </div>
+      <div class="card sendcard">
+        <h3>Send your bank</h3>
+        <label class="field">Your name or nickname<input id="lab-name" maxlength="40" placeholder="optional"></label>
+        <label class="field">Notes<textarea id="lab-notes" rows="5" maxlength="1500" placeholder="What did you change and why? Which style did you work on?"></textarea></label>
+        <button id="lab-mail" class="btn big wide">Email it to me</button>
+        <p class="note small">This downloads your bank as a small .json file and opens an email to <b>sodwavecontact@gmail.com</b>. Attach the file to the email and send. No email app? Send the file (or the copied text) to that address from your webmail.</p>
+        <div class="row"><button id="export" class="btn">Download (.json)</button><button id="lab-copy" class="btn ghost">Copy as text</button><span class="sp"></span><button id="lab-load" class="btn ghost" title="Open a bank file (yours or someone else's)">Load a bank…</button><input id="lab-file" type="file" accept=".json,application/json" hidden></div>
+        <h4 class="minih">Your changes from SIREN's bank</h4>
+        <pre id="lab-changes" class="changes"></pre>
+      </div>
+    </div>
+  </section>
+  <section id="tab-set" class="panel">
+    <div class="card wide"><h3>The set</h3><p class="note">Every track played, with its seed: type a seed back in to play that rave again.</p><ol id="setlog" class="setlog"></ol></div>
+  </section>
+</main>
+<footer class="foot">SIREN is free software (GPL-3.0) by Sodwave · the sound engines are the FM-1 firmwares' and the community's (see the README) · nothing you do here leaves your browser unless you send it</footer>
+<div id="toast" class="toast"></div>
+<div id="helpbox" class="helpbox" hidden>
+  <div class="helpcard">
+    <img src="assets/siren-logo-t.svg" alt="SIREN">
+    <h2>How to play</h2>
+    <ol>
+      <li><b>▶ Play.</b> SIREN composes an endless rave: the track, its sections (intro, build, drop, break…), its sounds. Pick a <b>style</b> at the bottom.</li>
+      <li><b>The composition</b> (the big pads): ask for a <b>DROP</b>, a <b>BUILD</b>, a <b>BREAK</b>, a <b>FILL</b>, a new melody, a key change, the next track… A pad stays lit until it happens, on the beat.</li>
+      <li><b>The DJ</b>: FILTER (left goes muffled, right goes thin), INTENSITY, SPACE (reverb and echo), MELODY. Drag a knob up or down.</li>
+      <li><b>The mixer</b>: every layer has its volume, filter, space, ‹ › to change its sound, ↻ for another motif, M to mute. Click its name to <b>take it in hand</b>: it always plays.</li>
+      <li><b>DJ effects</b>: hold an effect down (roll, filter, echo, cut…); let go and the music is back where it was.</li>
+    </ol>
+    <p class="note">SIREN keeps the mix clean on its own: at most 3 melodic layers at once (the ones waiting their turn say "waiting"), every sound at the right level.</p>
+    <p class="note"><b>Want to help?</b> The <b>Sound lab</b> tab lets you build your own sound bank and send it to me.</p>
+    <p class="note">Keyboard: space = play, F = show mode. Works best in Chrome or Edge on a computer.</p>
+    <button id="helpok" class="btn big">Let's go</button>
+  </div>
+</div>
+<div id="showinfo" class="showinfo"><b id="s-sec">—</b><span id="s-label"></span><small>click or Esc to go back</small></div>
+<div id="loading" class="loading"><img src="assets/siren-logo-t.svg" alt=""><progress id="loadbar" max="100" value="0"></progress><small>loading the sound engines…</small></div>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
