@@ -55,6 +55,7 @@ the sound engines from a web server).
 - `data/curation.json` SIREN's sound bank · `data/levels.json` its calibration (`tools/level_web.mjs`)
 - `data/kits.json` SIREN's drum kits · `data/palette.json` every sound the lab can add
 - `engines/clipper.wasm`, `engines/sloop.wasm` the sound engines of the Clipper and SLOOP firmwares for the FM-1
+  (sources: https://github.com/isod89/clipper-fm1 and https://github.com/isod89/sloop-fm1)
 - `engines/packs/` community sound modules (only used with "include community sound packs")
 - `tools/engine_test.mjs` runs the sound engine outside the browser and checks every control (Node.js)
 
