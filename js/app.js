@@ -439,8 +439,12 @@ async function main() {
   $('#show').addEventListener('click', () => { document.body.classList.add('show'); document.documentElement.requestFullscreen?.().catch(() => {}); });
   $('#sea').addEventListener('click', showOff); $('#showinfo').addEventListener('click', showOff);
   document.addEventListener('fullscreenchange', () => { if (!document.fullscreenElement) document.body.classList.remove('show'); });
+  let starting = false;
   $('#play').addEventListener('click', async () => {
-    await start(); playing = !playing; post({ t: 'play', on: playing });
+    if (starting) return;                                  // (the first start loads the engines: one click is enough)
+    if (!ctx) { starting = true; $('#play').classList.add('wait'); $('#play').firstChild.textContent = '…'; toast('STARTING THE SOUND ENGINES…'); }
+    try { await start(); } finally { starting = false; $('#play').classList.remove('wait'); }
+    playing = !playing; post({ t: 'play', on: playing });
     $('#play').classList.toggle('on', playing); $('#play').firstChild.textContent = playing ? '■' : '▶';
     if (playing) playStart = performance.now(); else { fxSet(-1); document.querySelectorAll('#beats i').forEach((b) => b.classList.remove('on')); }
   });
