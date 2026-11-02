@@ -11,6 +11,7 @@ body.show canvas#sea{opacity:1}
 .play{flex:none;width:58px;height:58px;border-radius:50%;border:0;background:var(--o);color:#000;font-size:22px;cursor:pointer;box-shadow:0 0 26px #ff621a66;transition:transform .1s}
 .play:active{transform:scale(.94)}.play.on{background:var(--fg);box-shadow:0 0 26px #ffffff44}
 .play.beat{box-shadow:0 0 40px #ff621acc}
+.play.wait{animation:pend .5s infinite alternate;--pc:var(--o);cursor:progress}
 .now{flex:1;display:flex;flex-direction:column;min-width:0}.now b{font:700 16px var(--mono);letter-spacing:.05em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.now span{color:var(--dim);font:12px var(--mono);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .keybox{display:flex;flex-direction:column;align-items:center;min-width:64px}.keybox b{font:800 26px var(--mono);color:var(--o);line-height:1}.keybox small{font:600 10px var(--mono);color:var(--dim);letter-spacing:.08em;margin-top:4px}
 .bpm{display:grid;grid-template-columns:auto auto;align-items:baseline;column-gap:6px;min-width:96px}.bpm b{font:800 32px var(--mono);line-height:1}.bpm small{color:var(--dim);font:11px var(--mono)}
