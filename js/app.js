@@ -337,12 +337,34 @@ function downloadBank() {
   const a = h('a', { href: URL.createObjectURL(new Blob([JSON.stringify(bankFile(), null, 1)], { type: 'application/json' })), download: `siren-bank-${safeName()}.json` });
   document.body.append(a); a.click(); a.remove();
 }
-function emailBank() {
-  downloadBank();
-  const f = `siren-bank-${safeName()}.json`, notes = $('#lab-notes').value.trim().slice(0, 600);
-  const body = `Hi! Here is my SIREN sound bank.\n\nPLEASE ATTACH THE FILE ${f} (it was just downloaded, usually in your Downloads folder).\n\nName: ${$('#lab-name').value.trim() || '-'}\nCommunity sounds: ${store.community ? 'yes' : 'no'}\n\nMy notes:\n${notes || '-'}\n\nWhat I changed:\n${changesText()}\n`;
-  location.href = `mailto:${MAIL}?subject=${encodeURIComponent(`SIREN sound bank from ${$('#lab-name').value.trim() || 'a SIREN fan'}`)}&body=${encodeURIComponent(body)}`;
-  toast('FILE DOWNLOADED: ATTACH IT TO THE EMAIL');
+// (web 0.5) send the bank straight to the inbox: FormSubmit (formsubmit.co) relays the form to MAIL, no email app needed
+// and no attachment (the bank travels as text). Its first submission ever sends MAIL an activation email to click once.
+let sending = false;
+async function sendBank() {
+  if (sending) return;
+  const n = Object.values(changes()).reduce((a, ls) => a + Object.values(ls).reduce((b, d) => b + d.added.length + d.removed.length, 0), 0);
+  if (!n && !$('#lab-notes').value.trim()) { toast('CHANGE THE BANK (OR WRITE A NOTE) FIRST'); return; }
+  const btn = $('#lab-mail'), name = $('#lab-name').value.trim();
+  sending = true; btn.disabled = true; btn.textContent = 'Sending…';
+  try {
+    const r = await fetch(`https://formsubmit.co/ajax/${MAIL}`, {
+      method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ _subject: `SIREN sound bank from ${name || 'a SIREN fan'}`, _template: 'box', _captcha: 'false',
+        name: name || '-', notes: $('#lab-notes').value.trim() || '-', community_sounds: store.community ? 'yes' : 'no',
+        changes: changesText(20000), bank: JSON.stringify(bankFile()) }),
+    });
+    const j = await r.json().catch(() => ({}));
+    if (r.ok && String(j.success) === 'true') { setSent('SENT, THANK YOU!'); toast('BANK SENT, THANK YOU!'); }
+    else throw new Error(j.message || `HTTP ${r.status}`);
+  } catch (e) {
+    setSent(''); toast('COULD NOT SEND: DOWNLOAD IT AND EMAIL THE FILE');
+    $('#lab-err').hidden = false; $('#lab-err').textContent = `Could not send (${String(e.message || e).slice(0, 120)}). Use Download, then email the file to ${MAIL}.`;
+  } finally { sending = false; btn.disabled = false; btn.textContent = 'Send my bank'; }
+}
+function setSent(t) { const e = $('#lab-sent'); e.textContent = t; e.hidden = !t; if (t) $('#lab-err').hidden = true; }
+function pasteBank() {
+  const t = prompt('Paste a SIREN bank (the "bank" text from an email, or a .json file\'s content):');
+  if (t) loadBankFile(new Blob([t.trim()]));
 }
 async function copyBank() { try { await navigator.clipboard.writeText(JSON.stringify(bankFile())); toast('BANK COPIED: PASTE IT IN AN EMAIL'); } catch (_) { toast('COULD NOT COPY: USE DOWNLOAD'); } }
 function loadBankFile(file) {
@@ -428,7 +450,7 @@ async function main() {
   $('#community').checked = store.community;
   $('#community').addEventListener('change', async (e) => { store.community = e.target.checked; save(); renderAtelier(); if (node) await sendPalette(); });
   $('#export').addEventListener('click', downloadBank);
-  $('#lab-mail').addEventListener('click', emailBank); $('#lab-copy').addEventListener('click', copyBank);
+  $('#lab-mail').addEventListener('click', sendBank); $('#lab-copy').addEventListener('click', copyBank); $('#lab-paste').addEventListener('click', pasteBank);
   $('#lab-load').addEventListener('click', () => $('#lab-file').click()); $('#lab-file').addEventListener('change', (e) => { if (e.target.files[0]) loadBankFile(e.target.files[0]); e.target.value = ''; });
   $('#lab-name').value = store.labName || ''; $('#lab-notes').value = store.labNotes || '';
   $('#lab-name').addEventListener('input', (e) => { store.labName = e.target.value; save(); }); $('#lab-notes').addEventListener('input', (e) => { store.labNotes = e.target.value; save(); });

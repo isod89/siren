@@ -73,7 +73,7 @@
           <li><b>Pick a style</b> below.</li>
           <li><b>Listen</b> to each sound (▶), <b>remove</b> what doesn't fit (×), <b>add</b> what's missing (+ add a sound).</li>
           <li><b>Try it:</b> go to <a href="#" data-go="play">Play</a> and press ▶. SIREN now picks from your bank (‹ › on a layer goes through its sounds).</li>
-          <li><b>Send it</b> to me with the form on the right. Your bank is saved in this browser, so you can come back to it.</li>
+          <li><b>Send it</b> to me with the button on the right. Your bank is saved in this browser, so you can come back to it.</li>
         </ol>
         <div class="row"><div id="a-styles" class="chips"></div></div>
         <div class="row"><span id="count" class="note"></span><span class="sp"></span><label class="chk"><input type="checkbox" id="community"> include community sound packs</label><button id="resetcur" class="btn ghost" title="Back to SIREN's own bank (your changes are lost)">Back to SIREN's bank</button></div>
@@ -84,9 +84,11 @@
         <h3>Send your bank</h3>
         <label class="field">Your name or nickname<input id="lab-name" maxlength="40" placeholder="optional"></label>
         <label class="field">Notes<textarea id="lab-notes" rows="5" maxlength="1500" placeholder="What did you change and why? Which style did you work on?"></textarea></label>
-        <button id="lab-mail" class="btn big wide">Email it to me</button>
-        <p class="note small">This downloads your bank as a small .json file and opens an email to <b>sodwavecontact@gmail.com</b>. Attach the file to the email and send. No email app? Send the file (or the copied text) to that address from your webmail.</p>
-        <div class="row"><button id="export" class="btn">Download (.json)</button><button id="lab-copy" class="btn ghost">Copy as text</button><span class="sp"></span><button id="lab-load" class="btn ghost" title="Open a bank file (yours or someone else's)">Load a bank…</button><input id="lab-file" type="file" accept=".json,application/json" hidden></div>
+        <button id="lab-mail" class="btn big wide">Send my bank</button>
+        <p id="lab-sent" class="sent" hidden></p>
+        <p id="lab-err" class="note small err" hidden></p>
+        <p class="note small">Sends your bank, your name and your notes straight to <b>sodwavecontact@gmail.com</b>. No email app, no attachment. You can send again after more changes.</p>
+        <div class="row"><button id="export" class="btn">Download (.json)</button><button id="lab-copy" class="btn ghost">Copy as text</button><span class="sp"></span><button id="lab-load" class="btn ghost" title="Open a bank file (yours or someone else's)">Load a bank…</button><button id="lab-paste" class="btn ghost" title="Paste a bank's text">Paste…</button><input id="lab-file" type="file" accept=".json,application/json" hidden></div>
         <h4 class="minih">Your changes from SIREN's bank</h4>
         <pre id="lab-changes" class="changes"></pre>
       </div>

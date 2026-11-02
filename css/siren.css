@@ -143,3 +143,6 @@ body.show{cursor:none}
 .changes{margin:0;max-height:220px;overflow:auto;padding:10px;border-radius:10px;background:#000a;border:1px solid var(--line);font:11px/1.5 var(--mono);color:var(--dim);white-space:pre-wrap}
 .foot{position:relative;z-index:2;padding:0 18px 26px;text-align:center;color:var(--faint);font-size:12px}
 @media (max-width:1000px){.labgrid{grid-template-columns:1fr}.sendcard{position:static}}
+.sent{margin:10px 0 0;padding:9px 12px;border-radius:10px;background:#1ecc7022;border:1px solid #1ecc7088;color:#7ff0b0;font:800 13px var(--ui);letter-spacing:.06em;text-align:center}
+.err{color:#ff9b70}
+.btn:disabled{opacity:.6;cursor:progress}

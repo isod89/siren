@@ -31,10 +31,10 @@ Choosing that bank is the biggest job left before SIREN ships on the FM-1.
 
 1. Open the **Sound lab** tab, pick a style, listen, remove what doesn't fit, add what's missing.
 2. Go back to **Play** and listen to SIREN with your bank.
-3. Press **Email it to me**: your bank is downloaded as a small `.json` file and an email to
-   **sodwavecontact@gmail.com** opens. Attach the file and send.
+3. Press **Send my bank**: your bank, your name and your notes go straight to **sodwavecontact@gmail.com**
+   (through the FormSubmit form service: no email app, no attachment needed). Or download it and email the file.
 
-Everything you do stays in your browser until you send it. No account, no tracking, no server.
+Everything you do stays in your browser until you press Send. No account, no tracking.
 
 ## Run it on your own computer
 
