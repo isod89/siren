@@ -402,7 +402,7 @@ class Siren extends AudioWorkletProcessor {
       const span = it.cut.max - it.cut.min, x = it.cutBase + (v / 1000 - 0.7) * span * 0.45;
       it.w.k_param(it.cut.id, Math.round(Math.max(it.cut.min, Math.min(it.cut.max, x))));
     }
-    this.gainT = ev.master.gain / 1000; this.hp = ev.master.hp / 1000; this.duckAmt = ev.master.duck / 1000; this.verbAmt = ev.master.verb / 1000;
+    this.gainT = ev.master.gain / 1000; this.hp = ev.master.hp / 1000; this.lp = (ev.master.lp || 0) / 1000; this.duckAmt = ev.master.duck / 1000; this.verbAmt = ev.master.verb / 1000;
     const waiting = MELO.filter((L) => !this.allowed.has(L) && !this.mute[L] && this.wrote(L));
     this.port.postMessage({ t: 'step', info: { ...ev.info, phraseBar: b.phraseBar, track: b.trackNo },
       notes: ev.notes.filter(([L]) => !MELO.includes(L) || this.allowed.has(L)).map((x) => [x[0], x[1], x[2]]),
@@ -521,7 +521,7 @@ class Siren extends AudioWorkletProcessor {
       // the master: the delay (ping-pong), the reverb, the isolator (the kills), the DJ filter (the hand's, the build's
       // high-pass, an effect's), the gate, the crush, the riser's noise, the limiter; the brake and the rewind (the tape)
       const D = this.dl, len = D[0].length, fb = echo ? 0.82 : dub ? 0.86 : 0.42;
-      const hpv = this.hp * 0.807, um = this.mFilt, tgt = P && P.f != null ? P.f : um < -0.01 ? um : Math.max(um, hpv);
+      const hpv = this.hp * 0.807, um = this.mFilt, tgt = P && P.f != null ? P.f : um < -0.01 ? um : this.lp > 0 && um <= 0.01 ? -0.78 * this.lp : Math.max(um, hpv);   // (0.6: the filtered intro, opening)
       this.mfv += (tgt - this.mfv) * 0.2; if (Math.abs(tgt - this.mfv) < 0.002) this.mfv = tgt;
       const [mlp, mhp] = fv(this.mfv); if (mlp) this.mlp.set(mlp, false); if (mhp) this.mhp.set(mhp, true);
       const kills = this.kill[0] < 1 || this.kill[1] < 1 || this.kill[2] < 1, room = wash ? 0.95 : 0.84;
